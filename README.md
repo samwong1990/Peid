@@ -8,6 +8,8 @@ Also facebook is doing it, that'd make it even easier.
 
 ![Image of split flow](http://i.imgur.com/Dl2DUcd.gif)
 
+Then Alice and Bob will see this in their inbox. They can then pay the bill in 2 clicks.
+![Image of pay flow](http://i.imgur.com/PjfDL9v.gif)
 
 This repo includes the first itertion in native Android, then a second iteration in PhoneGap.
 
