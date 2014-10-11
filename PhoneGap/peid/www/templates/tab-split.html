@@ -1,0 +1,32 @@
+<ion-view title="Split">
+    <ion-content style="margin-bottom:90px" direction="y" class="padding text-align-center">
+        <h1 class="title-logo">Split</h1>
+        <div class="row row-center" style="padding: 0 10% 0 5%; vertical-align: middle">
+            <div class="col col-20" style="text-align: right"><h1 style="margin:0">£</h1></div>
+            <div class="col">
+                <label class="item item-input">
+                    <i class="icon ion-cash placeholder-icon" style="margin-right: 10px"></i>
+                    <input type="number" ng-model="billDetails.billAmount" placeholder="3.14" style="font-size: 20px"/>
+                </label>
+            </div>
+        </div>
+
+        <h2 style="text-align: left">between myself and</h2>
+        <div class="row row-center" style="padding: 0 10% 0 10%">
+            <div class="col col-center">
+                <ul class="example-animate-container">
+                    <li class="animate-repeat" ng-repeat="contact in billDetails.contacts">
+                        <label class="item item-input">
+                            <i class="icon ion-email placeholder-icon" style="font-size:20px; margin-right: 10px"></i>
+                            <input ng-model="contact.email" type="text" style="font-size: 20px" value="{{contact.email}}">
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </ion-content>
+    <div class="fill-from-bottom">
+        <button style="bottom:50px" ng-click="goToConfirmPage()" type="button" class="button button-balanced button-block">Next</button>
+    </div>
+</ion-view>

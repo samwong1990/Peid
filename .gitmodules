@@ -1,0 +1,6 @@
+[submodule "Peid-CloudCode/cloud/lodash"]
+	path = Peid-CloudCode/cloud/lodash
+	url = git@github.com:lodash/lodash.git
+[submodule "Peid-CloudCode/cloud/gocardless-node"]
+	path = Peid-CloudCode/cloud/gocardless-node
+	url = git@github.com:samwong1990/gocardless-node.git

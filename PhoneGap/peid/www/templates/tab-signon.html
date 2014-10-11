@@ -1,0 +1,16 @@
+<ion-view>
+
+    <ion-content scroll="false" class="padding text-align-center">
+        <div>
+            <h1 class="title-logo">Peid</h1>
+        </div>
+
+        <div ng-switch on="state.formToShow">
+            <sign-in ng-switch-when="signIn"></sign-in>
+            <logged-in ng-switch-when="loggedIn"></logged-in>
+            <update-profile ng-switch-when="updateProfile"></update-profile>
+            <div ng-switch-default>WTF</div>
+        </div>
+
+    </ion-content>
+</ion-view>

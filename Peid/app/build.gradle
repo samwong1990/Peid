@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion '20.0.0'
+    defaultConfig {
+        applicationId 'com.backagen.peid'
+        minSdkVersion 14
+        targetSdkVersion 20
+        versionCode 1
+        versionName '1.0'
+        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'LICENSE.txt'
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
+    compile 'com.android.support:support-v13:19.+'
+    compile project(':ParseLoginUI')
+
+    compile 'com.google.guava:guava:16.0' // dont upgrade, unless you want to upgrade espresso as well
+    compile 'com.jakewharton.espresso:espresso:1.1-r3' // work around guava conflict
+    compile 'com.google.code.findbugs:jsr305:2.0.3'
+//    compile 'commons-collections:commons-collections:3.2.1'
+//    compile 'com.intellij:annotations:+@jar'
+    compile 'me.grantland:autofittextview:0.1.+'
+    // compile 'com.mobsandgeeks:android-saripaar:1.0.2'
+
+}

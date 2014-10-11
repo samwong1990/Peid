@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/com_parse_ui_vertical_margin"
+    android:paddingLeft="@dimen/com_parse_ui_horizontal_margin"
+    android:paddingRight="@dimen/com_parse_ui_horizontal_margin"
+    android:paddingBottom="@dimen/com_parse_ui_vertical_margin"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.10"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="right|center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Split £"/>
+
+        <com.backagen.peid.customView.EditTextWithCompletionMonitoring
+            android:id="@+id/bill_amount_input"
+            android:layout_width="90dp"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:inputType="number|numberDecimal"
+            android:gravity="center_vertical"
+            android:hint="10.00"
+            android:ems="10"/>
+
+        <!--<Spinner-->
+            <!--android:id="@+id/split_method_spinner"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:theme="@style/DarkerSpinnerTheme"-->
+            <!--android:popupBackground="#555"-->
+            <!--android:spinnerMode="dropdown"-->
+            <!--android:entries="@array/split_method" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="right|center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=" equally"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center"
+        android:text="between myself and"
+        android:layout_weight="0.05"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:id="@+id/scrollView"
+        android:layout_weight="0.60">
+
+        <LinearLayout
+            android:id="@+id/contact_details_container"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <com.backagen.peid.customView.EditTextWithCompletionMonitoring
+                android:id="@+id/ugly_hack_for_ui_test_arrgh"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:inputType="text"
+                android:hint="@string/contact_details_hint"/>
+
+            <com.backagen.peid.customView.EditTextWithCompletionMonitoring
+                android:id="@+id/ugly_hack_for_ui_test_arrgh2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:inputType="text"
+                android:hint="@string/contact_details_hint"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bill_details_next_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:padding="0dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="Next"
+        android:textSize="30dp"
+        android:layout_weight="0.15"
+        style="@style/ParseLoginUI.Button" />
+
+
+</LinearLayout>

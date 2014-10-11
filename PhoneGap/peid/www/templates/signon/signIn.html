@@ -1,0 +1,26 @@
+<form novalidate name="signInForm" ng-submit="login(credentials)">
+    <!-- There should be a error message class...-->
+    <button ng-show="errorMessage" class="button button-bar button-assertive">
+        <i class="icon ion-alert" style="padding-right:10px"/></i>      {{ errorMessage }}
+    </button>
+    <br>
+    <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input type="text" ng-model="credentials.email" required>
+    </label>
+
+    <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password" ng-model="credentials.password" required>
+    </label>
+
+    <label ng-show="showConfirmPassword" class="item item-input">
+        <span class="input-label">Confirm Password</span>
+        <input type="password" ng-model="credentials.confirmPassword" required>
+    </label>
+
+    <div style="margin-top:10px">
+        <button type="submit" class="button button-stable" ng-disabled="credentials.$invalid">Log in</button>
+        <button type="button" class="button button-stable" ng-click="signUp(credentials)">Sign up</button>
+    </div>
+</form>

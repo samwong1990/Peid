@@ -1,0 +1,60 @@
+<ion-view>
+    <ion-content  direction="y" >
+        <div class="raleway explanation-text" style="padding: 0 10% 0 10%">
+            <h1 class="title-logo text-align-center">That's it!</h1>
+
+            <div ng-show="shouldShowProgress()">
+                <span ng-switch="getProgressType()">
+                    <button ng-switch-when="ongoing"
+                            class='button button-bar button-calm'>
+                        <i class="icon ion-loading-c"/></i>
+                        <span style="margin-left: 10px">Magic is happening...</span>
+                    </button>
+                    <button ng-switch-when="success"
+                            class='button button-bar button-balanced'>
+                        <i class="icon ion-checkmark"/></i>
+                        <span style="margin-left: 10px">All done!</span>
+                    </button>
+                    <button ng-switch-when="fail"
+                            class='button button-bar button-assertive'>
+                        <i class="icon ion-close"/></i>
+                        <span style="margin-left: 10px">I am terribly sorry but something went wrong... Try again with good connection? <br>The error is: {{rpcState.error}}</span>
+                    </button>
+                </span>
+            </div>
+
+            <p>Your friends will pay you through the link in the email.</p>
+
+            <p>You also have a copy of all the links in your inbox.</p>
+
+            <p>Thank you for using Peid.</p>
+
+            <!-- There should be a error message class...-->
+            <button ng-show="errorMessage" class="button button-bar button-assertive">
+                <i class="icon ion-alert" style="padding-right:10px"/></i>      {{ errorMessage }}
+            </button>
+            <br>
+        </div>
+        <div style="padding: 0 10% 0 10%">
+            <form novalidate name="feedbackForm" ng-show="showFeedback()" ng-submit="submitFeedback()">
+                <h3>Optional feedback:</h3>
+                <span class="raleway" style="font-weight:800; max-width:100%;width:100%;color:white">How would you rate your experience?</span>
+                <rating ng-model="rating.stars" max="rating.max" class="bigger_star" style="color:yellow"></rating>
+                <span class="input-label" style="font-weight:800; max-width:100%;width:100%;color:white">How can I do better?</span>
+                <textarea id="rating-comment" ng-keyup="expandText()" ng-keydown="expandText()"
+                          placeholder=" Additional Comment" ng-model="rating.comments"></textarea>
+                <br>
+                <button type="submit" class="button button-block button-positive" ng-disabled="rating.$invalid">Submit
+                </button>
+            </form>
+            <button ng-show="!showFeedback()"
+                    class='button button-bar button-balanced'
+                    style="margin-bottom:10px;">
+                <i class="icon ion-checkmark"/></i>
+                <span style="margin-left: 10px">Thanks for your feedback!</span>
+            </button>
+            <br>
+
+        </div>
+    </ion-content>
+</ion-view>

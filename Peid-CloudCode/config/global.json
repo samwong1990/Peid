@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Peid": {
+            "applicationId": "appid",
+            "masterKey": "masterkey"
+        },
+        "_default": {
+            "link": "Peid"
+        }
+    },
+    "global": {
+        "parseVersion": "1.2.19"
+    }
+}

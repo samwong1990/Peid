@@ -1,0 +1,15 @@
+<div>
+    <p>You are logged in as {{ credentials.name }}</p>
+
+    <p>{{ credentials.email }}</p>
+
+    <div class="" style="margin-top:4em">
+        <button id="go_to_split" ng-click="goToSplitTab()" type="button" class="button button-balanced button-block">
+            Split a
+            bill
+        </button>
+        <a ng-click="goToUpdateProfile()" class="button button-royal button-block">Update Profile</a>
+        <button type="button" ng-show="!_.isEmpty(credentials)" class="button button-light button-block" ng-click="logout()">Log out
+        </button>
+    </div>
+</div>
